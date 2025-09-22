@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Какой вы менеджер?</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f4f6f9;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      max-width: 700px;
+      margin: 40px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    }
+    h1, h2 {
+      text-align: center;
+      color: #333;
+    }
+    .question {
+      margin-bottom: 20px;
+    }
+    .answers label {
+      display: block;
+      padding: 8px;
+      margin: 5px 0;
+      background: #eef1f7;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button {
+      display: block;
+      margin: 20px auto;
+      padding: 12px 25px;
+      background: #4CAF50;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #45a049;
+    }
+    #result {
+      margin-top: 30px;
+      padding: 20px;
+      background: #eaf7ea;
+      border-left: 5px solid #4CAF50;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Тест: Какой вы менеджер?</h1>
+    <form id="quizForm">
+
+      <!-- ВОПРОСЫ -->
+      <div class="question">
+        <h3>1. Как вы принимаете решения?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q1" value="authoritarian"> Быстро и жёстко</label>
+          <label><input type="radio" name="q1" value="democratic"> После обсуждения с командой</label>
+          <label><input type="radio" name="q1" value="strategic"> Долго анализирую факты</label>
+          <label><input type="radio" name="q1" value="charismatic"> Спонтанно, полагаясь на интуицию</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>2. Что для вас важнее в работе?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q2" value="authoritarian"> Результат любой ценой</label>
+          <label><input type="radio" name="q2" value="democratic"> Хорошие отношения в команде</label>
+          <label><input type="radio" name="q2" value="strategic"> Продуманная стратегия</label>
+          <label><input type="radio" name="q2" value="charismatic"> Атмосфера и вдохновение</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>3. Как вы мотивируете сотрудников?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q3" value="authoritarian"> Дисциплина и контроль</label>
+          <label><input type="radio" name="q3" value="democratic"> Совместное обсуждение и участие</label>
+          <label><input type="radio" name="q3" value="strategic"> Постановка долгосрочных целей</label>
+          <label><input type="radio" name="q3" value="charismatic"> Личный пример и харизма</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>4. Как вы относитесь к ошибкам сотрудников?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q4" value="authoritarian"> Ошибки недопустимы</label>
+          <label><input type="radio" name="q4" value="democratic"> Ошибки — часть обучения</label>
+          <label><input type="radio" name="q4" value="strategic"> Ошибки — сигнал для анализа системы</label>
+          <label><input type="radio" name="q4" value="charismatic"> Ошибки — это нормально</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>5. Каким вы видите себя в коллективе?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q5" value="authoritarian"> Главный руководитель</label>
+          <label><input type="radio" name="q5" value="democratic"> Координатор, слушающий мнения</label>
+          <label><input type="radio" name="q5" value="strategic"> Аналитик, думающий на шаг вперёд</label>
+          <label><input type="radio" name="q5" value="charismatic"> Вдохновитель</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>6. Как вы распределяете задачи?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q6" value="authoritarian"> Приказываю и проверяю</label>
+          <label><input type="radio" name="q6" value="democratic"> Совместно договариваемся</label>
+          <label><input type="radio" name="q6" value="strategic"> Распределяю по плану</label>
+          <label><input type="radio" name="q6" value="charismatic"> Даю свободу</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>7. Что для вас приоритетно в кризисной ситуации?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q7" value="authoritarian"> Сохранить дисциплину</label>
+          <label><input type="radio" name="q7" value="democratic"> Объединить команду</label>
+          <label><input type="radio" name="q7" value="strategic"> Продумать стратегию выхода</label>
+          <label><input type="radio" name="q7" value="charismatic"> Вдохновить людей</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>8. Какой стиль общения вам ближе?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q8" value="authoritarian"> Краткие приказы</label>
+          <label><input type="radio" name="q8" value="democratic"> Дружеские обсуждения</label>
+          <label><input type="radio" name="q8" value="strategic"> Логичные аргументы</label>
+          <label><input type="radio" name="q8" value="charismatic"> Эмоциональные речи</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>9. Как вы относитесь к делегированию?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q9" value="authoritarian"> Контролирую всё</label>
+          <label><input type="radio" name="q9" value="democratic"> Доверяю коллегам</label>
+          <label><input type="radio" name="q9" value="strategic"> Передаю по компетенциям</label>
+          <label><input type="radio" name="q9" value="charismatic"> Ставлю на инициативу</label>
+        </div>
+      </div>
+
+      <div class="question">
+        <h3>10. Что вы цените больше всего?</h3>
+        <div class="answers">
+          <label><input type="radio" name="q10" value="authoritarian"> Дисциплину</label>
+          <label><input type="radio" name="q10" value="democratic"> Командную работу</label>
+          <label><input type="radio" name="q10" value="strategic"> Долгосрочные планы</label>
+          <label><input type="radio" name="q10" value="charismatic"> Творчество и энергию</label>
+        </div>
+      </div>
+
+      <button type="button" onclick="calculateResult()">Узнать результат</button>
+    </form>
+
+    <div id="result"></div>
+  </div>
+
+  <script>
+    function calculateResult() {
+      let scores = {
+        authoritarian: 0,
+        democratic: 0,
+        strategic: 0,
+        charismatic: 0
+      };
+
+      // Собираем все ответы
+      for (let i = 1; i <= 10; i++) {
+        let q = document.querySelector(`input[name="q${i}"]:checked`);
+        if (q) {
+          scores[q.value]++;
+        }
+      }
+
+      // Определяем максимум
+      let maxType = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
+
+      let resultText = "";
+      if (maxType === "authoritarian") {
+        resultText = "<h2>Вы авторитарный менеджер</h2><p>Вы требовательный руководитель, ориентированный на результат. Ваша сила — дисциплина и контроль.</p>";
+      } else if (maxType === "democratic") {
+        resultText = "<h2>Вы демократический менеджер</h2><p>Вы цените командную работу и вовлекаете сотрудников в процесс принятия решений.</p>";
+      } else if (maxType === "strategic") {
+        resultText = "<h2>Вы стратегический менеджер</h2><p>Вы мыслите на шаг вперёд, строите долгосрочные планы и анализируете систему.</p>";
+      } else if (maxType === "charismatic") {
+        resultText = "<h2>Вы харизматичный лидер</h2><p>Вы вдохновляете команду своей энергией и личным примером.</p>";
+      }
+
+      document.getElementById("result").innerHTML = resultText;
+      document.getElementById("result").style.display = "block";
+      window.scrollTo(0,document.body.scrollHeight);
+    }
+  </script>
+</body>
+</html>
